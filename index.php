@@ -1,14 +1,14 @@
-<?php 
- 
-// Get the PHP helper library from 
-require_once '/vendor/autoload.php';use Twilio\Rest\Client; 
- 
-$response = new Services_Twilio_Twiml;
-$body = $_REQUEST['Body'];
+<?php
+require_once './vendor/autoload.php';
+use Twilio\Twiml;
 
-if( $body == 'hello' ){
-    $response->message('Hi!');
-}else if( $body == 'bye' ){
-    $response->message('Goodbye');
-}
-print $response;
+$response = new Twiml();
+$message = $response->message();
+$message->body('Hello World!');
+$response->redirect
+
+('https://demo.twilio.com/sms/welcome');
+
+echo $response;
+
+
